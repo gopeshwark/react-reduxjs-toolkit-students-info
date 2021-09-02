@@ -1,4 +1,4 @@
-# Student Database with reactjs-toolkit
+# Student Database with reactjs-toolkit (Slice and Entity Adapter Function)
 
 ## Table of Contents
 
@@ -12,7 +12,7 @@
 
 ---
 
-This project aims at creating a simple Student Database for practice purpose to understand the react, material-ui, react-hook-form and reduxjs-toolkit.
+This project aims at creating a simple Student Database for practice purpose to understand the react, material-ui, react-hook-form and reduxjs-toolkit with Entity Adapter function.
 
 ### Screenshot
 
@@ -20,19 +20,19 @@ This project aims at creating a simple Student Database for practice purpose to 
 
 #### Home Page
 
-![Home Page](frontend/public/images/Home.PNG)
+![Home Page](public/images/Home.PNG)
 
 #### Display Single Student Page
 
-![Display Single Student Page](frontend/public/images/View.PNG)
+![Display Single Student Page](public/images/View.PNG)
 
 #### Edit Student Page
 
-![Edit Student Page](frontend/public/images/Edit.PNG)
+![Edit Student Page](public/images/Edit.PNG)
 
 #### Add Student Page
 
-![Add Student Page](frontend/public/images/Add.PNG)
+![Add Student Page](public/images/Add.PNG)
 
 ## Technologies
 
@@ -54,7 +54,7 @@ A little intro about the installation.
 
 ```
 $ git clone https://github.com/gopeshwark/react-reduxjs-toolkit-students-info.git
-$ cd ./react-reduxjs-toolkit-students-info/frontend/
+$ cd ./react-reduxjs-toolkit-students-info/
 $ npm install
 $ npm start
 ```
