@@ -1,8 +1,8 @@
+import React from "react";
 import { Button, Paper, TextField } from "@material-ui/core";
-import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useForm, Controller } from "react-hook-form";
-import { useHistory, useParams } from "react-router";
+import { useHistory } from "react-router";
 import { addStudent } from "../redux/studentSlice";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -11,6 +11,7 @@ const AddStudent = () => {
   const { handleSubmit, control, reset, register } = useForm({
     defaultValues: {
       id: uuidv4(),
+      createdAt: Date.now(),
       firstName: "",
       lastName: "",
       email: "",
@@ -23,6 +24,7 @@ const AddStudent = () => {
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
+    console.log(data);
     dispatch(addStudent(data));
     reset({
       firstName: "",
@@ -108,10 +110,10 @@ const AddStudent = () => {
 
           <Controller
             control={control}
-            name="phoneNumber"
+            name="phone"
             render={({ field }) => (
               <TextField
-                id="phoneNumber"
+                id="phone"
                 label="Phone Number"
                 variant="outlined"
                 placeholder="Enter Your Phone Number"

@@ -4,6 +4,7 @@ import StudentItem from "./StudentItem";
 import { useSelector } from "react-redux";
 import { Add } from "@material-ui/icons";
 import { Link } from "react-router-dom";
+import { studentSelector } from "../redux/studentSlice";
 
 const useStyles = makeStyles((theme) => ({
   fab: {
@@ -15,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Students = () => {
   const styles = useStyles();
-  const studentData = useSelector((state) => state.student.students);
+  const studentData = useSelector((state) => studentSelector.selectAll(state));
 
   return (
     <>
