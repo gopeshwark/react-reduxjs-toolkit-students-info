@@ -5,11 +5,12 @@ import AddStudent from "./components/AddStudent";
 import EditStudent from "./components/EditStudent";
 import Student from "./components/Student";
 import Students from "./components/Students";
+import theme from "./theme";
 
 function App() {
   return (
     <Router>
-      <ThemeProvider>
+      <ThemeProvider theme={theme}>
         <CssBaseline />
         <Container>
           <Switch>
