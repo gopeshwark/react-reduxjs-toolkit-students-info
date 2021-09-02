@@ -1,4 +1,4 @@
-# React Stepper Form with React-hook-form
+# Student Database with reactjs-toolkit
 
 ## Table of Contents
 
@@ -7,8 +7,6 @@
 1. [General Info](#general-info)
 2. [Technologies](#technologies)
 3. [Installation](#installation)
-4. [Collaboration](#collaboration)
-5. [FAQs](#faqs)
 
 ### General Info
 
@@ -22,19 +20,19 @@ This project aims at creating a simple Student Database for practice purpose to 
 
 #### Home Page
 
-![Home Page](public/images/Home.PNG)
+![Home Page](frontend/public/images/Home.PNG)
 
 #### Display Single Student Page
 
-![Display Single Student Page](public/images/View.PNG)
+![Display Single Student Page](frontend/public/images/View.PNG)
 
 #### Edit Student Page
 
-![Edit Student Page](public/images/Edit.PNG)
+![Edit Student Page](frontend/public/images/Edit.PNG)
 
 #### Add Student Page
 
-![Add Student Page](public/images/Add.PNG)
+![Add Student Page](frontend/public/images/Add.PNG)
 
 ## Technologies
 
