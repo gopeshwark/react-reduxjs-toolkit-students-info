@@ -1,70 +1,62 @@
-# Getting Started with Create React App
+# React Stepper Form with React-hook-form
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Table of Contents
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+1. [General Info](#general-info)
+2. [Technologies](#technologies)
+3. [Installation](#installation)
+4. [Collaboration](#collaboration)
+5. [FAQs](#faqs)
 
-### `yarn start`
+### General Info
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+---
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+This project aims at creating a simple Student Database for practice purpose to understand the react, material-ui, react-hook-form and reduxjs-toolkit.
 
-### `yarn test`
+### Screenshot
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `yarn build`
+#### Home Page
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![Home Page](public/images/Home.PNG)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Display Single Student Page
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Display Single Student Page](public/images/View.PNG)
 
-### `yarn eject`
+#### Edit Student Page
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![Edit Student Page](public/images/Edit.PNG)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Add Student Page
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+![Add Student Page](public/images/Add.PNG)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Technologies
 
-## Learn More
+---
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+A list of technologies used within the project:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [React.js](https://reactjs.org/): Version 17.0.2
+- [Material-UI](https://material-ui.com/): Version 4.12
+- [React-hook-form](https://react-hook-form.com/): Version 7.14.2
+- [Reactjs/toolkit](https://redux-toolkit.js.org/): Version 1.6.1
+- [React-redux](https://react-redux.js.org/): Version 7.2.4
 
-### Code Splitting
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+---
 
-### Analyzing the Bundle Size
+A little intro about the installation.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```
+$ git clone https://github.com/gopeshwark/react-reduxjs-toolkit-students-info.git
+$ cd ./react-reduxjs-toolkit-students-info/frontend/
+$ npm install
+$ npm start
+```

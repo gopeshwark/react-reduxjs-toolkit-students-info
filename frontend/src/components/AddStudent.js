@@ -5,6 +5,7 @@ import { useForm, Controller } from "react-hook-form";
 import { useHistory, useParams } from "react-router";
 import { addStudent } from "../redux/studentSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const AddStudent = () => {
   const { handleSubmit, control, reset, register } = useForm({
@@ -123,6 +124,9 @@ const AddStudent = () => {
           <Button type="submit">Create New Student</Button>
         </form>
       </Paper>
+      <Button variant="outlined" component={Link} to="/">
+        Back
+      </Button>
     </div>
   );
 };

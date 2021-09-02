@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router";
+import { Link } from "react-router-dom";
 import { clearStudent, getStudent, updateStudent } from "../redux/studentSlice";
 
 const EditStudent = () => {
@@ -122,6 +123,9 @@ const EditStudent = () => {
           <Button type="submit">Update Student</Button>
         </form>
       </Paper>
+      <Button variant="outlined" component={Link} to="/">
+        Back
+      </Button>
     </div>
   );
 };
