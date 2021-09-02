@@ -11,12 +11,15 @@ import EditIcon from "@material-ui/icons/Edit";
 import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import React from "react";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { deleteStudent } from "../redux/studentSlice";
 
-const StudentItem = (studentData) => {
-  const { id, firstName, lastName, email, phone, address } = studentData;
+const StudentItem = (student) => {
+  const { id, firstName, lastName, email, phone, address } = student;
+  const dispatch = useDispatch();
 
-  const handleDelete = () => {
-    console.log("item deleted");
+  const handleDelete = (id) => {
+    dispatch(deleteStudent(id));
   };
 
   return (
@@ -41,7 +44,10 @@ const StudentItem = (studentData) => {
         >
           Edit
         </Button>
-        <Button startIcon={<DeleteOutlineIcon />} onClick={handleDelete}>
+        <Button
+          startIcon={<DeleteOutlineIcon />}
+          onClick={() => handleDelete(id)}
+        >
           Delete
         </Button>
       </Paper>

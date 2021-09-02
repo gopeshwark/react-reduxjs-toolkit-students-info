@@ -1,7 +1,7 @@
 import { Fab, Grid, makeStyles } from "@material-ui/core";
 import React from "react";
 import StudentItem from "./StudentItem";
-import { studentData } from "../data";
+import { useSelector } from "react-redux";
 import { Add } from "@material-ui/icons";
 import { Link } from "react-router-dom";
 
@@ -15,12 +15,13 @@ const useStyles = makeStyles((theme) => ({
 
 const Students = () => {
   const styles = useStyles();
+  const studentData = useSelector((state) => state.student.students);
 
   return (
     <>
       <Grid spacing={2} container>
-        {studentData.map((data) => (
-          <StudentItem key={data.id} {...data} />
+        {studentData.map((student) => (
+          <StudentItem key={student.id} {...student} />
         ))}
       </Grid>
       <Fab

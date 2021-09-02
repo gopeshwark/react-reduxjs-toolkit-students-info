@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Paper, Typography } from "@material-ui/core";
 import { useParams } from "react-router-dom";
-import { studentData } from "../data";
+import { useDispatch, useSelector } from "react-redux";
+import { getStudent, clearStudent } from "../redux/studentSlice";
 
 const Student = () => {
   const params = useParams();
-  const [student, setStudent] = useState({});
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    const currentStudent = studentData.find(
-      (student) => student.id == params.id
-    );
+    dispatch(getStudent(params.id));
+    return () => {
+      dispatch(clearStudent());
+    };
+  }, [params.id]);
 
-    setStudent(currentStudent);
-  }, [params]);
-  console.log(student);
+  const student = useSelector((state) => state.student.student);
   const { id, firstName, lastName, phone, email, address } = student;
   return (
     <Paper key={id}>

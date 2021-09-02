@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useForm, Controller } from "react-hook-form";
 import { useHistory, useParams } from "react-router";
+import { addStudent } from "../redux/studentSlice";
+import { useDispatch } from "react-redux";
 
 const AddStudent = () => {
   const { handleSubmit, control, reset, register } = useForm({
@@ -17,10 +19,10 @@ const AddStudent = () => {
   });
 
   const history = useHistory();
-  const [student, setStudent] = useState({});
+  const dispatch = useDispatch();
 
   const onSubmit = (data) => {
-    setStudent(data);
+    dispatch(addStudent(data));
     reset({
       firstName: "",
       lastName: "",
@@ -29,7 +31,6 @@ const AddStudent = () => {
       phone: "",
     });
     history.push("/");
-    console.log(data);
   };
 
   return (
