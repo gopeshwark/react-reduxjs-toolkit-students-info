@@ -14,7 +14,7 @@
 
 ---
 
-This project aims at creating a simple Student Database for practice purpose to understand the react, material-ui, react-hook-form and reduxjs-toolkit.
+This project aims at creating a simple Student Database for practice purpose to understand the react, material-ui, react-hook-form and reduxjs-toolkit with createActions and createReducers funtctions.
 
 ### Screenshot
 
@@ -47,6 +47,7 @@ A list of technologies used within the project:
 - [React-hook-form](https://react-hook-form.com/): Version 7.14.2
 - [Reactjs/toolkit](https://redux-toolkit.js.org/): Version 1.6.1
 - [React-redux](https://react-redux.js.org/): Version 7.2.4
+- [React-router-dom](https://reactrouter.com/): Version 5.2.1
 
 ## Installation
 
@@ -55,8 +56,8 @@ A list of technologies used within the project:
 A little intro about the installation.
 
 ```
-$ git clone https://github.com/gopeshwark/react-reduxjs-toolkit-students-info.git
-$ cd ./react-reduxjs-toolkit-students-info/frontend/
+$ git clone https://github.com/gopeshwark/react-reduxjs-toolkit-students-info.git ([actions-reducers] branch)
+$ cd ./react-reduxjs-toolkit-students-info/
 $ npm install
 $ npm start
 ```
