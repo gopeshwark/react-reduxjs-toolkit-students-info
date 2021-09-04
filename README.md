@@ -1,6 +1,6 @@
 # Student Database
 
-## reactjs-toolkit, createAction and createReducer
+## reactjs-toolkit using Actions, createReducers and Entity Adapter
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@
 
 ---
 
-This project aims at creating a simple Student Database for practice purpose to understand the react, material-ui, react-hook-form and reduxjs-toolkit with createActions and createReducers funtctions.
+This project aims at creating a simple Student Database for practice purpose to understand the react, material-ui, react-hook-form and reduxjs-toolkit with createActions and createReducers functions with createEntityAdapter function.
 
 ### Screenshot
 
@@ -56,7 +56,7 @@ A list of technologies used within the project:
 A little intro about the installation.
 
 ```
-$ git clone https://github.com/gopeshwark/react-reduxjs-toolkit-students-info.git ([actions-reducers] branch)
+$ git clone https://github.com/gopeshwark/react-reduxjs-toolkit-students-info.git ([actions-reducers-with-entity-adapter] branch)
 $ cd ./react-reduxjs-toolkit-students-info/
 $ npm install
 $ npm start

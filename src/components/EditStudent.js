@@ -4,11 +4,8 @@ import { useForm, Controller } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router";
 import { Link } from "react-router-dom";
-import {
-  clearStudent,
-  editStudent,
-  findStudent,
-} from "../redux/actions/studentAction";
+import { editStudent } from "../redux/actions/studentAction";
+import { studentSelector } from "../redux/reducers/studentReducer";
 
 const EditStudent = () => {
   const { handleSubmit, control, reset } = useForm({
@@ -24,21 +21,21 @@ const EditStudent = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(findStudent(params.id));
-    return () => {
-      dispatch(clearStudent());
-    };
-  }, [params.id]);
-
-  const studentData = useSelector((state) => state.student.student);
+  const studentData = useSelector((state) =>
+    studentSelector.selectById(state, params.id)
+  );
 
   useEffect(() => {
     reset(studentData);
   }, [reset, studentData]);
 
   const onSubmit = (data) => {
-    dispatch(editStudent(data));
+    const { id, ...student } = data;
+    const updated_student = {
+      id: id,
+      changes: { updatedAt: Date.now(), ...student },
+    };
+    dispatch(editStudent(updated_student));
     history.push("/");
   };
 

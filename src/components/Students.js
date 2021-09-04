@@ -1,9 +1,10 @@
 import { Fab, Grid, makeStyles } from "@material-ui/core";
-import React, { useEffect } from "react";
+import React from "react";
 import StudentItem from "./StudentItem";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Add } from "@material-ui/icons";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { studentSelector } from "../redux/reducers/studentReducer";
 
 const useStyles = makeStyles((theme) => ({
   fab: {
@@ -15,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Students = () => {
   const styles = useStyles();
-  const studentData = useSelector((state) => state.student.students);
+  const studentData = useSelector((state) => studentSelector.selectAll(state));
 
   return (
     <>

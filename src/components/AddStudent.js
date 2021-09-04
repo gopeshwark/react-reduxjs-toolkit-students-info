@@ -23,7 +23,8 @@ const AddStudent = () => {
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
-    dispatch(createStudent(data));
+    dispatch(createStudent({ createdAt: Date.now(), ...data }));
+    console.log({ createdAt: Date.now(), ...data });
     reset();
     history.push("/");
   };
@@ -102,10 +103,10 @@ const AddStudent = () => {
 
           <Controller
             control={control}
-            name="phoneNumber"
+            name="phone"
             render={({ field }) => (
               <TextField
-                id="phoneNumber"
+                id="phone"
                 label="Phone Number"
                 variant="outlined"
                 placeholder="Enter Your Phone Number"

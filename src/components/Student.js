@@ -1,21 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Button, Paper, Typography } from "@material-ui/core";
 import { Link, useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { findStudent, clearStudent } from "../redux/actions/studentAction";
+import { useSelector } from "react-redux";
+import { studentSelector } from "../redux/reducers/studentReducer";
 
 const Student = () => {
   const params = useParams();
-  const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(findStudent(params.id));
-    return () => {
-      dispatch(clearStudent());
-    };
-  }, [params.id]);
-
-  const student = useSelector((state) => state.student.student);
+  const student = useSelector((state) =>
+    studentSelector.selectById(state, params.id)
+  );
   const { id, firstName, lastName, phone, email, address } = student;
   return (
     <>
