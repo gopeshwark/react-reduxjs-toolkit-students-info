@@ -1,5 +1,11 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { findStudent } from "../actions/studentAction";
+import {
+  findStudent,
+  clearStudent,
+  createStudent,
+  editStudent,
+  deleteStudent,
+} from "../actions/studentAction";
 
 const initialState = {
   students: [
@@ -47,11 +53,28 @@ const initialState = {
 };
 
 const studentReducer = createReducer(initialState, (builder) => {
-  builder.addCase(findStudent, (state, action) => {
-    state.student = state.students.find(
-      (student) => student.id == action.payload
-    );
-  });
+  builder
+    .addCase(findStudent, (state, action) => {
+      state.student = state.students.find(
+        (student) => student.id == action.payload
+      );
+    })
+    .addCase(clearStudent, (state) => {
+      state.student = {};
+    })
+    .addCase(createStudent, (state, action) => {
+      state.students = [action.payload, ...state.students];
+    })
+    .addCase(editStudent, (state, action) => {
+      state.students = state.students.map((student) =>
+        student.id == action.payload.id ? action.payload : student
+      );
+    })
+    .addCase(deleteStudent, (state, action) => {
+      state.students = state.students.filter(
+        (student) => student.id != action.payload
+      );
+    });
 });
 
 export default studentReducer;

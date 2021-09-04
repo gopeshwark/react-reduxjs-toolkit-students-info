@@ -1,11 +1,11 @@
 import { Button, Paper, TextField } from "@material-ui/core";
-import React, { useState } from "react";
+import React from "react";
 import { v4 as uuidv4 } from "uuid";
 import { useForm, Controller } from "react-hook-form";
-import { useHistory, useParams } from "react-router";
-import { addStudent } from "../redux/studentSlice";
+import { useHistory } from "react-router";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { createStudent } from "../redux/actions/studentAction";
 
 const AddStudent = () => {
   const { handleSubmit, control, reset, register } = useForm({
@@ -23,14 +23,8 @@ const AddStudent = () => {
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
-    dispatch(addStudent(data));
-    reset({
-      firstName: "",
-      lastName: "",
-      email: "",
-      address: "",
-      phone: "",
-    });
+    dispatch(createStudent(data));
+    reset();
     history.push("/");
   };
 

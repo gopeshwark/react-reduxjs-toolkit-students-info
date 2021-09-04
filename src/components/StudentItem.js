@@ -12,7 +12,7 @@ import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { deleteStudent } from "../redux/studentSlice";
+import { deleteStudent } from "../redux/actions/studentAction";
 
 const StudentItem = (student) => {
   const { id, firstName, lastName, email, phone, address } = student;
