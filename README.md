@@ -1,6 +1,6 @@
-# Student Database
+# Student Database (Complete)
 
-## reactjs-toolkit, createAction and createReducer
+## MERN stack with reactjs-toolkit - asyncThunk
 
 ## Table of Contents
 
@@ -14,7 +14,7 @@
 
 ---
 
-This project aims at creating a simple Student Database for practice purpose to understand the react, material-ui, react-hook-form and reduxjs-toolkit with createActions and createReducers funtctions.
+This project aims at creating a simple Student Database for practice purpose to understand the react, material-ui, react-hook-form and reduxjs-toolkit with createActions, createReducers and createAsyncThunk funtctions for client side. The app is connected with backend using express js server and mongodb as database.
 
 ### Screenshot
 
@@ -22,19 +22,19 @@ This project aims at creating a simple Student Database for practice purpose to 
 
 #### Home Page
 
-![Home Page](public/images/Home.PNG)
+![Home Page](frontend/public/images/Home.PNG)
 
 #### Display Single Student Page
 
-![Display Single Student Page](public/images/View.PNG)
+![Display Single Student Page](frontend/public/images/View.PNG)
 
 #### Edit Student Page
 
-![Edit Student Page](public/images/Edit.PNG)
+![Edit Student Page](frontend/public/images/Edit.PNG)
 
 #### Add Student Page
 
-![Add Student Page](public/images/Add.PNG)
+![Add Student Page](frontend/public/images/Add.PNG)
 
 ## Technologies
 
@@ -56,8 +56,9 @@ A list of technologies used within the project:
 A little intro about the installation.
 
 ```
-$ git clone https://github.com/gopeshwark/react-reduxjs-toolkit-students-info.git ([actions-reducers] branch)
+$ git clone https://github.com/gopeshwark/react-reduxjs-toolkit-students-info.git ([mern-actions-reducers] branch)
 $ cd ./react-reduxjs-toolkit-students-info/
 $ npm install
-$ npm start
+$ cd ./frontend && npm install
+$ npm run start:dev
 ```
