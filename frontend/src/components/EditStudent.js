@@ -6,8 +6,8 @@ import { useHistory, useParams } from "react-router";
 import { Link } from "react-router-dom";
 import {
   clearStudent,
-  editStudent,
-  findStudent,
+  fetchStudentById,
+  updateStudentById,
 } from "../redux/actions/studentAction";
 
 const EditStudent = () => {
@@ -25,7 +25,7 @@ const EditStudent = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(findStudent(params.id));
+    dispatch(fetchStudentById(params.id));
     return () => {
       dispatch(clearStudent());
     };
@@ -38,7 +38,7 @@ const EditStudent = () => {
   }, [reset, studentData]);
 
   const onSubmit = (data) => {
-    dispatch(editStudent(data));
+    dispatch(updateStudentById(data));
     history.push("/");
   };
 

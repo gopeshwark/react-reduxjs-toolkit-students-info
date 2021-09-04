@@ -5,12 +5,11 @@ import { useForm, Controller } from "react-hook-form";
 import { useHistory } from "react-router";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { createStudent } from "../redux/actions/studentAction";
+import { createNewStudent } from "../redux/actions/studentAction";
 
 const AddStudent = () => {
   const { handleSubmit, control, reset, register } = useForm({
     defaultValues: {
-      id: uuidv4(),
       firstName: "",
       lastName: "",
       email: "",
@@ -23,7 +22,7 @@ const AddStudent = () => {
   const dispatch = useDispatch();
 
   const onSubmit = (data) => {
-    dispatch(createStudent(data));
+    dispatch(createNewStudent(data));
     reset();
     history.push("/");
   };
@@ -35,7 +34,7 @@ const AddStudent = () => {
           <TextField
             inputProps={{ type: "hidden" }}
             margin="normal"
-            {...register("id")}
+            {...register("_id")}
           />
           <Controller
             control={control}

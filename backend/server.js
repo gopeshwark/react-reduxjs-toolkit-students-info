@@ -10,4 +10,4 @@ app.use(express.json());
 app.use("/students", require("./routes/userRoute"));
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT,  () => console.log(`Server is started at: ${PORT}`);)
+app.listen(PORT, () => console.log(`Server is started at: ${PORT}`));

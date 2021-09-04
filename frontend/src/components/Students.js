@@ -4,6 +4,7 @@ import StudentItem from "./StudentItem";
 import { useDispatch, useSelector } from "react-redux";
 import { Add } from "@material-ui/icons";
 import { Link, useParams } from "react-router-dom";
+import { fetchAllStudents } from "../redux/actions/studentAction";
 
 const useStyles = makeStyles((theme) => ({
   fab: {
@@ -15,13 +16,18 @@ const useStyles = makeStyles((theme) => ({
 
 const Students = () => {
   const styles = useStyles();
+  const dispatch = useDispatch();
   const studentData = useSelector((state) => state.student.students);
+
+  useEffect(() => {
+    dispatch(fetchAllStudents());
+  }, []);
 
   return (
     <>
       <Grid spacing={2} container>
         {studentData.map((student) => (
-          <StudentItem key={student.id} {...student} />
+          <StudentItem key={student._id} {...student} />
         ))}
       </Grid>
       <Fab

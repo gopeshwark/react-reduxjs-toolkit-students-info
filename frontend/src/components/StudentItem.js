@@ -12,14 +12,14 @@ import DeleteOutlineIcon from "@material-ui/icons/DeleteOutline";
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { deleteStudent } from "../redux/actions/studentAction";
+import { deleteStudentById } from "../redux/actions/studentAction";
 
 const StudentItem = (student) => {
-  const { id, firstName, lastName, email, phone, address } = student;
+  const { _id, firstName, lastName, email, phone, address } = student;
   const dispatch = useDispatch();
 
-  const handleDelete = (id) => {
-    dispatch(deleteStudent(id));
+  const handleDelete = (_id) => {
+    dispatch(deleteStudentById(_id));
   };
 
   return (
@@ -29,7 +29,7 @@ const StudentItem = (student) => {
           <Typography variant="subtitle2" gutterBottom>
             {firstName} {lastName}
           </Typography>
-          <IconButton component={Link} to={`/students/${id}`}>
+          <IconButton component={Link} to={`/students/${_id}`}>
             <VisibilityIcon />
           </IconButton>
         </Box>
@@ -38,7 +38,7 @@ const StudentItem = (student) => {
         <Typography variant="caption">{address}</Typography>
         <Button
           component={Link}
-          to={`/students/edit/${id}`}
+          to={`/students/edit/${_id}`}
           variant="outlined"
           startIcon={<EditIcon />}
         >
@@ -46,7 +46,7 @@ const StudentItem = (student) => {
         </Button>
         <Button
           startIcon={<DeleteOutlineIcon />}
-          onClick={() => handleDelete(id)}
+          onClick={() => handleDelete(_id)}
         >
           Delete
         </Button>
