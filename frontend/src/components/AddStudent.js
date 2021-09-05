@@ -1,11 +1,11 @@
 import { Button, Paper, TextField } from "@material-ui/core";
 import React from "react";
-import { v4 as uuidv4 } from "uuid";
 import { useForm, Controller } from "react-hook-form";
 import { useHistory } from "react-router";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { createNewStudent } from "../redux/actions/studentAction";
+import { useSnackbar } from "notistack";
 
 const AddStudent = () => {
   const { handleSubmit, control, reset, register } = useForm({
@@ -20,11 +20,13 @@ const AddStudent = () => {
 
   const history = useHistory();
   const dispatch = useDispatch();
+  const { enqueueSnackbar } = useSnackbar();
 
   const onSubmit = (data) => {
     dispatch(createNewStudent(data));
     reset();
     history.push("/");
+    enqueueSnackbar("New Student Successfully Created", { variant: "success" });
   };
 
   return (
@@ -34,7 +36,7 @@ const AddStudent = () => {
           <TextField
             inputProps={{ type: "hidden" }}
             margin="normal"
-            {...register("_id")}
+            // {...register("_id")}
           />
           <Controller
             control={control}
@@ -101,10 +103,10 @@ const AddStudent = () => {
 
           <Controller
             control={control}
-            name="phoneNumber"
+            name="phone"
             render={({ field }) => (
               <TextField
-                id="phoneNumber"
+                id="phone"
                 label="Phone Number"
                 variant="outlined"
                 placeholder="Enter Your Phone Number"

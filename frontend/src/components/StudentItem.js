@@ -13,13 +13,22 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { deleteStudentById } from "../redux/actions/studentAction";
+import { useSnackbar } from "notistack";
 
 const StudentItem = (student) => {
   const { _id, firstName, lastName, email, phone, address } = student;
   const dispatch = useDispatch();
+  const { enqueueSnackbar } = useSnackbar();
 
-  const handleDelete = (_id) => {
-    dispatch(deleteStudentById(_id));
+  const handleDelete = async () => {
+    try {
+      await dispatch(deleteStudentById(_id)).unwrap();
+      enqueueSnackbar("student Data Successfully removed", {
+        variant: "success",
+      });
+    } catch (error) {
+      enqueueSnackbar(error.message, { variant: "error" });
+    }
   };
 
   return (

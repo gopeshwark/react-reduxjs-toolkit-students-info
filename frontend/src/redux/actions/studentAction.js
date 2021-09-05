@@ -4,19 +4,27 @@ import axios from "axios";
 export const fetchAllStudents = createAsyncThunk(
   "student/fetchAllStudents",
   async (student, thunkApi) => {
-    if (thunkApi.getState().student.students.length > 0) {
-      return thunkApi.getState().student.students;
+    try {
+      if (thunkApi.getState().student.students.length > 0) {
+        return thunkApi.getState().student.students;
+      }
+      const { data } = await axios.get("/students");
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.data);
     }
-    const { data } = await axios.get("/students");
-    return data;
   }
 );
 
 export const createNewStudent = createAsyncThunk(
   "student/createNewStudent",
-  async (student) => {
-    const { data } = await axios.post("/students", student);
-    return data;
+  async (student, thunkApi) => {
+    try {
+      const { data } = await axios.post("/students", student);
+      return data;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.data);
+    }
   }
 );
 
@@ -39,9 +47,13 @@ export const updateStudentById = createAsyncThunk(
 
 export const deleteStudentById = createAsyncThunk(
   "student/deleteStudentById",
-  async (studentId) => {
-    await axios.delete(`/students/${studentId}`);
-    return studentId;
+  async (studentId, thunkApi) => {
+    try {
+      await axios.delete(`/students/${studentId}`);
+      return studentId;
+    } catch (error) {
+      return thunkApi.rejectWithValue(error.response.data);
+    }
   }
 );
 

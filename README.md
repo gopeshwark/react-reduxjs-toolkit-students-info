@@ -40,7 +40,9 @@ This project aims at creating a simple Student Database for practice purpose to 
 
 ---
 
-A list of technologies used within the project:
+#### A list of technologies used within the project:
+
+Client Side:
 
 - [React.js](https://reactjs.org/): Version 17.0.2
 - [Material-UI](https://material-ui.com/): Version 4.12
@@ -48,6 +50,11 @@ A list of technologies used within the project:
 - [Reactjs/toolkit](https://redux-toolkit.js.org/): Version 1.6.1
 - [React-redux](https://react-redux.js.org/): Version 7.2.4
 - [React-router-dom](https://reactrouter.com/): Version 5.2.1
+
+Server Side:
+
+- [Express.js](https://expressjs.com/): Version 4.17.1
+- [mongoose](https://mongoosejs.com/): Version 6.0.4
 
 ## Installation
 

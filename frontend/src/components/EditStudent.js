@@ -4,6 +4,7 @@ import { useForm, Controller } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useParams } from "react-router";
 import { Link } from "react-router-dom";
+import { useSnackbar } from "notistack";
 import {
   clearStudent,
   fetchStudentById,
@@ -23,6 +24,7 @@ const EditStudent = () => {
   const params = useParams();
   const history = useHistory();
   const dispatch = useDispatch();
+  const { enqueueSnackbar } = useSnackbar();
 
   useEffect(() => {
     dispatch(fetchStudentById(params.id));
@@ -40,6 +42,7 @@ const EditStudent = () => {
   const onSubmit = (data) => {
     dispatch(updateStudentById(data));
     history.push("/");
+    enqueueSnackbar("Student Successfully Updated", { variant: "warning" });
   };
 
   return (
